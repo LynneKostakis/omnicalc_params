@@ -46,7 +46,7 @@ class CalculationsController < ApplicationController
   
   def flex_payment
     
-      @user_basis_points = params["a_number"].to_f/1000  
+      @user_basis_points = params["a_number"].to_f/100  
       @user_number_years = params["b_number"].to_f
       @user_present_value = params["c_number"].to_f
       @monthly_payment = ((@user_basis_points/100/12)*@user_present_value)/(1-((1+(@user_basis_points/100/12))**(@user_number_years*-12)))
