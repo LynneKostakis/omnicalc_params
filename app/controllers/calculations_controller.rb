@@ -38,7 +38,7 @@ class CalculationsController < ApplicationController
   
   def process_square_root
       
-    @user_number = params["a_number"].to_f 
+    @user_number = params["the_user_number"].to_f 
     @square_root_number = Math.sqrt(@user_number)    
     
     render("calculations/square_root_results_template.html.erb")
