@@ -1,0 +1,22 @@
+<h1>Payment Form Results</h1>
+
+<p>
+<b>APR</b>
+<br/>
+<%= number_with_precision(@user_apr, :precision => 4)%>%
+<br/>
+<b>Number of years</b>
+<br/>
+<%= @user_number_years %>
+<br/>
+<b>Principal</b>
+<br/>
+$<%= number_with_precision(@user_present_value, :precision => 2, :delimiter => ',')%>
+<br/>
+<b>Monthly Payment</b>
+<br/>
+$<%= number_with_precision(@monthly_payment, :precision => 2, :delimiter => ',')%>
+</p>
+
+<a href="https://omnicalc-params-lynnekostakis.c9users.io/payment/new">Calculate another payment</a>
+
