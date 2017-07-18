@@ -63,4 +63,24 @@ class CalculationsController < ApplicationController
     
     render("calculations/random_number_template.html.erb")
   end 
+
+  def payment_form
+    
+   
+    
+    render("calculations/payment_form_template.html.erb")
+  end 
+  
+  def process_payment
+      
+      @user_apr = params["the_user_apr"].to_f
+      @user_number_years = params["the_user_years"].to_f
+      @user_present_value = params["the_user_pv"].to_f
+      @monthly_payment = ((@user_apr/12)*@user_present_value)/(1-((1+(@user_apr/12))**(@user_number_years*-12)))
+    
+    render("calculations/payment_results_template.html.erb")
+  end 
+  
+
+  
 end
