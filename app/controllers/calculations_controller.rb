@@ -38,9 +38,19 @@ class CalculationsController < ApplicationController
   
   def process_square_root
       
-    @user_number = params["the_user_number"].to_i    
+    @user_number = params["a_number"].to_i 
     @square_root_number = Math.sqrt(@user_number)    
     
     render("calculations/square_root_results_template.html.erb")
   end 
+  
+  def flex_payment
+    
+      @user_basis_points = params["a_number"].to_f/100  
+      @user_number_years = params["b_number"].to_f
+      @user_present_value = params["c_number"].to_f
+      @monthly_payment = ((@user_basis_points/100/12)*@user_present_value)/(1-((1+(@user_basis_points/100/12))**(@user_number_years*-12)))
+    render("calculations/flexible_payment_template.html.erb")
+    
+  end   
 end
