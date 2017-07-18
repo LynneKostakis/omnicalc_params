@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   
   get("/flexible/payment/:a_number/:b_number/:c_number", { :controller => "calculations", :action => "flex_payment" })
   
+  get("/flexible/random/:min/:max", { :controller => "calculations", :action => "process_random_number" })
+  
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount WebGit::Engine, at: "/rails/git"
 end

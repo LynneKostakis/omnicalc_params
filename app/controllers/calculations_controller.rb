@@ -52,5 +52,15 @@ class CalculationsController < ApplicationController
       @monthly_payment = ((@user_basis_points/100/12)*@user_present_value)/(1-((1+(@user_basis_points/100/12))**(@user_number_years*-12)))
     render("calculations/flexible_payment_template.html.erb")
     
-  end   
+  end 
+  
+  def process_random_number
+      
+    @min = params["min"].to_i 
+    @max = params["max"].to_i 
+    @random_number = rand(@min..@max)
+    
+    
+    render("calculations/random_number_template.html.erb")
+  end 
 end
