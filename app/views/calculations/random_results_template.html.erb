@@ -1,0 +1,19 @@
+<h1>Random Results</h1>
+
+<p>
+<b>Minimum</b>
+<br/>
+<%= number_with_precision(@min, :precision => 1)%>
+<br/>
+<b>Maximum</b>
+<br/>
+<%= number_with_precision(@max, :precision => 1)%>
+<br/>
+<b>Random Number</b>
+<br/>
+<%= number_with_precision(@random_number, :precision => 4, :delimiter => ',')%>
+<br/>
+<br/>
+
+<a href="https://omnicalc-params-lynnekostakis.c9users.io/payment/new">Pick another random number</a>
+
